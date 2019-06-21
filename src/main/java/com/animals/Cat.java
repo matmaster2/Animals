@@ -3,10 +3,11 @@ package com.animals;
 public class Cat {
 
     private static final String VOICE = "Miau!!";
+    private static final int WALK_SPEED = 20;
 
     private int energy = 0;
 
-    private boolean isRested() {
+    public boolean isRested() {
         return energy >= 0;
     }
 
@@ -33,11 +34,13 @@ public class Cat {
         return manyVoices.toString();
     }
 
-
-    void walk(int minutes) {
+    void walkInMinutes(int minutes) {
         this.energy = this.energy - minutes;
     }
 
+    void walkInMeters(int meteres) {
+        this.energy = this.energy - meteres / WALK_SPEED;
+    }
 }
 
 
