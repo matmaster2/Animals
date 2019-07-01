@@ -11,21 +11,21 @@ public class Cat {
         return energy >= 0;
     }
 
-    void sleep(int minutes) {
-        this.energy = this.energy + minutes / 2;  //TODO spytac sie czy musi byc this.
+    public void sleep(int minutes) {
+        this.energy = this.energy + minutes / 2;
     }
 
-    void sleep(int hour, int minutes) {
+    public void sleep(int hour, int minutes) {
         sleep(minutes + hour * 60);
     }
 
-    String makeVoice() {
+    public String makeVoice() {
         System.out.println(VOICE);
         this.energy--;
         return VOICE;
     }
 
-    String makeVoice(int numberOfVoices) {
+    public String makeVoice(int numberOfVoices) {
         StringBuilder manyVoices = new StringBuilder();
         for (int i = 0; i < numberOfVoices; i++) {
             makeVoice();
@@ -34,11 +34,11 @@ public class Cat {
         return manyVoices.toString();
     }
 
-    void walkInMinutes(int minutes) {
+    public void walkInMinutes(int minutes) {
         this.energy = this.energy - minutes;
     }
 
-    void walkInMeters(int meteres) {
+    public void walkInMeters(int meteres) {
         this.energy = this.energy - meteres / WALK_SPEED;
     }
 }
