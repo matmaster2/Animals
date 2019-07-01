@@ -12,7 +12,7 @@ public class Cat {
     }
 
     void sleep(int minutes) {
-        this.energy = this.energy + minutes / 2;
+        this.energy = this.energy + minutes / 2;  //TODO spytac sie czy musi byc this.
     }
 
     void sleep(int hour, int minutes) {

@@ -1,31 +1,41 @@
 package com.animals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Math.random;
 
 public class Main {
-
+    
+    static int minutesToEndOfDay = 60 * 24; //static final int TODO dopytac - czy na pewno final?
+    
     public static void main(String[] args) {
-        Cat cat = new Cat(); //TODO przydałby się drugi kot, a może trzy. Chociaż nie, lepiej 666 kotów
-        int minutesToEndOfDay = 840; // 60 * 24 czasami ułatwia życie a niewiele kosztuje TODO static final int
+
+       // List<Cat> CatsList = new ArrayList<Cat>();
+        Cat cat = new Cat(); //TODO przydałby się drugi kot, a może trzy. Chociaż nie, lepiej 666 kotów <----- spytac o szczegoly
+       // CatsList.add(cat);
+
 
         while (minutesToEndOfDay > 0) {
-            int save = generateRandomNumber(); //Przydałaby się lepsza nazna dla save
-            System.out.println("Czy kot jest wyspany? " + cat.isRested()); //Sprawdź sobie String.format("%s", "text")
-            save = save > minutesToEndOfDay ? minutesToEndOfDay : save;
+            int actionTime = generateRandomNumber();
+            System.out.format("Czy kot jest wyspany? %b\n", cat.isRested());
+            //System.out.println("Czy kot jest wyspany? " + cat.isRested()); //Sprawdź sobie String.format("%s", "text")
+            actionTime = actionTime > minutesToEndOfDay ? minutesToEndOfDay : actionTime;
             if (cat.isRested()) {
-//                cat.makeVoice((int) random() * 10); //TODO aktywuj to
-                cat.walkInMinutes(save);
-                System.out.println("Kot chodził: " + save);  //Sprawdź sobie String.format("%s", "text") TODO wypisz ile pozostało do końca dnia i podaj jednostki
+                cat.makeVoice(actionTime);
+                cat.walkInMinutes(actionTime);
+                System.out.println("Kot chodził: " + actionTime/60+" godzin i "+ actionTime%60 +" minut\nDo końca dnia pozostało: "+(minutesToEndOfDay-actionTime)/60 +" godzin i "+(minutesToEndOfDay-actionTime)%60+" minut");
             } else {
-                cat.sleep(save);
-                System.out.println("Kot spal: " + save); //Sprawdź sobie String.format("%s", "text") TODO wypisz ile pozostało do końca dnia i podaj jednostki
+                cat.sleep(actionTime);
+                System.out.println("Kot spał: " + actionTime/60+" godzin i "+ actionTime%60 +" minut\nDo końca dnia pozostało: "+(minutesToEndOfDay-actionTime)/60 +" godzin i "+(minutesToEndOfDay-actionTime)%60+" minut");
             }
-            minutesToEndOfDay = minutesToEndOfDay - save;
+            minutesToEndOfDay = minutesToEndOfDay - actionTime;
         }
         System.out.println("Czy kot jest wyspany? " + cat.isRested());
     }
 
-    static int generateRandomNumber() { //TODO zrób prywatne
+    private static int generateRandomNumber() { 
         return (int) (random() * 100);
     }
+
 }
