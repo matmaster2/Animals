@@ -1,11 +1,12 @@
 package com.animals;
 
+import com.animals.enums.CatVoices;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Cat {
 
-    private static final List<String> VOICE = Arrays.asList("Miau!!", "Hau!", "Szczek!", "LEGIA!");
     private static final int WALK_SPEED = 20;
 
     private final String name;
@@ -32,7 +33,8 @@ public class Cat {
     }
 
     public String makeVoice() {
-        String voices = VOICE.get(this.energy%VOICE.size());
+        String voices="xd"; //TODO: glosy w zaleznosci od zmeczenia, przedzialy po 10 (normal 0-10)
+        //BEDZIE MNIE GNEBIC ZEBY PRZENIESC PRZEDZIALY DO ENUMOW !! chuj
         System.out.println(voices);
         this.energy--;
         return voices;
