@@ -1,11 +1,23 @@
 package com.animals;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Cat {
 
-    private static final String VOICE = "Miau!!";
+    private static final List<String> VOICE = Arrays.asList("Miau!!", "Hau!", "Szczek!", "LEGIA!");
     private static final int WALK_SPEED = 20;
 
+    private final String name;
     private int energy = 0;
+
+    public Cat(String name){
+        this.name=name;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public boolean isRested() {
         return energy >= 0;
@@ -20,16 +32,16 @@ public class Cat {
     }
 
     public String makeVoice() {
-        System.out.println(VOICE);
+        String voices = VOICE.get(this.energy%VOICE.size());
+        System.out.println(voices);
         this.energy--;
-        return VOICE;
+        return voices;
     }
 
     public String makeVoice(int numberOfVoices) {
         StringBuilder manyVoices = new StringBuilder();
         for (int i = 0; i < numberOfVoices; i++) {
-            makeVoice();
-            manyVoices.append(VOICE).append(" ");
+            manyVoices.append(makeVoice()).append(" ");
         }
         return manyVoices.toString();
     }
