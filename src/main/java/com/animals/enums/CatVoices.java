@@ -15,5 +15,7 @@ public enum CatVoices {
 
     public String getVoice() {
         return voice;
+
     }
 }
+
