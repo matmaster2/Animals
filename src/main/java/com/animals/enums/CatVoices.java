@@ -10,7 +10,7 @@ public enum CatVoices {
     private final String voice;
 
     CatVoices(String voice) {
-        this.voice=voice;
+        this.voice = voice;
     }
 
     public String getVoice() {

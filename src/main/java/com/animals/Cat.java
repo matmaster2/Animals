@@ -2,9 +2,6 @@ package com.animals;
 
 import com.animals.enums.CatVoices;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class Cat {
 
     private static final int WALK_SPEED = 20;
@@ -45,7 +42,7 @@ public class Cat {
         } else {
             voices = CatVoices.RESTED.getVoice();
         }
-                            //TODO BEDZIE MNIE GNEBIC ZEBY PRZENIESC PRZEDZIALY DO ENUMOW !!
+        //TODO BEDZIE MNIE GNEBIC ZEBY PRZENIESC PRZEDZIALY DO ENUMOW !!
         System.out.println(voices);
         this.energy--;
         return voices;
