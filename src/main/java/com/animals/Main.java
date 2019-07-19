@@ -2,6 +2,9 @@ package com.animals;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.animals.basic.Animal;
+import com.animals.basic.Cat;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,7 +25,7 @@ public class Main {
 
         while (i < NUMBER_OF_CATS) {
             int minutesToEndOfDay = DAY_IN_MINUTES;
-            Cat cat = new Cat(CAT_NAMES.get(i));
+            Animal cat = new Cat(CAT_NAMES.get(i));
             while (minutesToEndOfDay > 0) {
                 log.info("Dane na temat {}: ", cat.getName());
                 int actionTime = generateRandomNumber();

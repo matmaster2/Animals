@@ -1,10 +1,11 @@
-package com.animals;
+package com.animals.basic;
 
-import com.animals.enums.CatVoices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Cat {
+import static com.animals.enums.CatVoices.*;
+
+public class Cat implements Animal {
 
     private static final Logger log = LogManager.getLogger(Cat.class);
 
@@ -36,15 +37,15 @@ public class Cat {
     public String makeVoice() {
         String voices = "";
         if (energy < -10) {
-            voices = CatVoices.EXHAUSTED.getVoice();
+            voices = EXHAUSTED.getVoice();
         } else if (energy < 0) {
-            voices = CatVoices.TIRED.getVoice();
+            voices = TIRED.getVoice();
         } else if (energy < 10) {
-            voices = CatVoices.NORMAL.getVoice();
+            voices = NORMAL.getVoice();
         } else if (energy < 20) {
-            voices = CatVoices.HALF_RESTED.getVoice();
+            voices = HALF_RESTED.getVoice();
         } else {
-            voices = CatVoices.RESTED.getVoice();
+            voices = RESTED.getVoice();
         }
         //TODO BEDZIE MNIE GNEBIC ZEBY PRZENIESC PRZEDZIALY DO ENUMOW !!
         log.info(voices);
