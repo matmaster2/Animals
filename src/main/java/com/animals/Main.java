@@ -2,7 +2,6 @@ package com.animals;
 
 import java.util.Arrays;
 import java.util.List;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,7 +10,8 @@ import static java.lang.Math.random;
 
 public class Main {
 
-    private static final Logger LOG = LogManager.getLogger();
+    private static final Logger log = LogManager.getLogger(Main.class);
+
     private static final int DAY_IN_MINUTES = 60 * 24;
     private static final int NUMBER_OF_CATS = 2;
     private static final List<String> CAT_NAMES = Arrays.asList("Mika", "Hubert", "Bartus");
@@ -24,22 +24,22 @@ public class Main {
             int minutesToEndOfDay = DAY_IN_MINUTES;
             Cat cat = new Cat(CAT_NAMES.get(i));
             while (minutesToEndOfDay > 0) {
-                LOG.info("Dane na temat {}: ", cat.getName());
+                log.info("Dane na temat {}: ", cat.getName());
                 int actionTime = generateRandomNumber();
-                LOG.info("Czy {} jest wyspany? {}", cat.getName(), cat.isRested());
+                log.info("Czy {} jest wyspany? {}", cat.getName(), cat.isRested());
                 actionTime = actionTime > minutesToEndOfDay ? minutesToEndOfDay : actionTime;
                 if (cat.isRested()) {
                     cat.makeVoice(generateRandomNumber(10));
                     cat.walkInMinutes(actionTime);
-                    LOG.info("{} chodził {} godzin i {} minut", cat.getName(), toHours(actionTime), actionTime % 60);
+                    log.info("{} chodził {} godzin i {} minut", cat.getName(), toHours(actionTime), actionTime % 60);
                 } else {
                     cat.sleep(actionTime);
-                    LOG.info("{} spał {} godzin i {} minut", cat.getName(), toHours(actionTime), actionTime % 60);
+                    log.info("{} spał {} godzin i {} minut", cat.getName(), toHours(actionTime), actionTime % 60);
                 }
-                LOG.info("Do końca dnia pozostało: {} godzin i {} minut", toHours(minutesToEndOfDay - actionTime), (minutesToEndOfDay - actionTime) % 60);
+                log.info("Do końca dnia pozostało: {} godzin i {} minut", toHours(minutesToEndOfDay - actionTime), (minutesToEndOfDay - actionTime) % 60);
                 minutesToEndOfDay = minutesToEndOfDay - actionTime;
             }
-            LOG.info("Czy kot jest wyspany? " + cat.isRested());
+            log.info("Czy kot jest wyspany? " + cat.isRested());
             i++;
         }
     }
@@ -53,7 +53,7 @@ public class Main {
     }
 
     private static int generateRandomNumber(int scale) {
-        return (int) (random() * scale);
+        return (int) (random() * scale); //todo
     }
 
 }

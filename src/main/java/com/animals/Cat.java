@@ -1,8 +1,12 @@
 package com.animals;
 
 import com.animals.enums.CatVoices;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Cat {
+
+    private static final Logger log = LogManager.getLogger(Cat.class);
 
     private static final int WALK_SPEED = 20;
 
@@ -31,19 +35,19 @@ public class Cat {
 
     public String makeVoice() {
         String voices = "";
-        if (energy < 10) {
+        if (energy < -10) {
             voices = CatVoices.EXHAUSTED.getVoice();
-        } else if (energy >= 10 && energy < 0) {
+        } else if (energy < 0) {
             voices = CatVoices.TIRED.getVoice();
-        } else if (energy >= 0 && energy < 10) {
+        } else if (energy < 10) {
             voices = CatVoices.NORMAL.getVoice();
-        } else if (energy >= 10 && energy < 20) {
+        } else if (energy < 20) {
             voices = CatVoices.HALF_RESTED.getVoice();
         } else {
             voices = CatVoices.RESTED.getVoice();
         }
         //TODO BEDZIE MNIE GNEBIC ZEBY PRZENIESC PRZEDZIALY DO ENUMOW !!
-        System.out.println(voices);
+        log.info(voices);
         this.energy--;
         return voices;
     }
