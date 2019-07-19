@@ -27,3 +27,4 @@ public class Dog implements Animal {
 
     }
 }
+//todo uzupelnic psa

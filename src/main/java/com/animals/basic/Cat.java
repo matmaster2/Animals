@@ -1,5 +1,6 @@
 package com.animals.basic;
 
+import com.animals.enums.CatVoices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,14 +19,31 @@ public class Cat implements Animal {
         this.name = name;
     }
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public boolean isRested() {
         return energy >= 0;
     }
 
+    public CatVoices howRested(){
+        if (energy < -10) {
+            return EXHAUSTED;
+        } else if (energy < 0) {
+            return TIRED;
+        } else if (energy < 10) {
+            return NORMAL;
+        } else if (energy < 20) {
+            return HALF_RESTED;
+        } else {
+            return RESTED;
+        }
+    }
+
+    @Override
     public void sleep(int minutes) {
         this.energy = this.energy + minutes / 2;
     }
@@ -53,6 +71,7 @@ public class Cat implements Animal {
         return voices;
     }
 
+    @Override
     public String makeVoice(int numberOfVoices) {
         StringBuilder manyVoices = new StringBuilder();
         for (int i = 0; i < numberOfVoices; i++) {
@@ -61,6 +80,7 @@ public class Cat implements Animal {
         return manyVoices.toString();
     }
 
+    @Override
     public void walkInMinutes(int minutes) {
         this.energy = this.energy - minutes;
     }
