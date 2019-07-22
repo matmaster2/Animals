@@ -1,11 +1,11 @@
 package com.animals.enums;
 
 public enum CatVoices {
-    RESTED("LEGIA!"),
-    HALF_RESTED("ARKA_GDYNIA!"),
-    NORMAL("Miau!"),
-    TIRED("Hau!"),
-    EXHAUSTED("Szczek");
+    RESTED("MIAUUUU! I AM RESTED!"),
+    HALF_RESTED("MIAUU! I AM HALF_RESTED!"),
+    NORMAL("normal Miau!"),
+    TIRED("Miau...ziew"),
+    EXHAUSTED("zzz");
 
     private final String voice;
 
@@ -15,7 +15,5 @@ public enum CatVoices {
 
     public String getVoice() {
         return voice;
-
     }
 }
-

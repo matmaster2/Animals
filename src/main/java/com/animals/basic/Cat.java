@@ -42,7 +42,6 @@ public class Cat implements Animal {
             return RESTED;
         }
     }
-
     @Override
     public void sleep(int minutes) {
         this.energy = this.energy + minutes / 2;
@@ -65,7 +64,8 @@ public class Cat implements Animal {
         } else {
             voices = RESTED.getVoice();
         }
-        //TODO BEDZIE MNIE GNEBIC ZEBY PRZENIESC PRZEDZIALY DO ENUMOW !!
+
+        //todo
         log.info(voices);
         this.energy--;
         return voices;

@@ -2,6 +2,7 @@ package com.animals;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import com.animals.basic.Animal;
 import com.animals.basic.Cat;
@@ -56,7 +57,8 @@ public class Main {
     }
 
     private static int generateRandomNumber(int scale) {
-        return (int) (random() * scale); //todo
+        Random r = new Random();
+        return r.nextInt(scale);
     }
 
 }

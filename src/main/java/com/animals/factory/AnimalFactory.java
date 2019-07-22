@@ -13,9 +13,8 @@ public class AnimalFactory {
         //todo java 12 nowy switch-case
         switch (animal){
             case "cat": return new Cat("Azzura");
-            case "dog": return new Dog(); //todo przyjrzyj sie podpowiedzi
-            default: return new Dog();
+            case "dog": return new Dog("Ciapek");
+            default: return null;
         }
-
     }
 }
