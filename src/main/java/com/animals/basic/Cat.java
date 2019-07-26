@@ -52,20 +52,7 @@ public class Cat implements Animal {
     }
 
     public String makeVoice() {
-        String voices = "";
-        if (energy < -10) {
-            voices = EXHAUSTED.getVoice();
-        } else if (energy < 0) {
-            voices = TIRED.getVoice();
-        } else if (energy < 10) {
-            voices = NORMAL.getVoice();
-        } else if (energy < 20) {
-            voices = HALF_RESTED.getVoice();
-        } else {
-            voices = RESTED.getVoice();
-        }
-
-        //todo
+        String voices = howRested().getVoice();
         log.info(voices);
         this.energy--;
         return voices;
