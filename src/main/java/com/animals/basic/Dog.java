@@ -1,10 +1,12 @@
 package com.animals.basic;
 
+import static com.animals.enums.DogVoices.*;
+
 import com.animals.enums.DogVoices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.animals.enums.DogVoices.*;
+
 
 public class Dog extends Animal {
 
@@ -16,6 +18,7 @@ public class Dog extends Animal {
     private int energy = 0;
 
     public Dog(String name) {
+        super(name);
         this.name = name;
     }
 

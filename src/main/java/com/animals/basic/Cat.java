@@ -16,6 +16,7 @@ public class Cat extends Animal {
     private int energy = 0;
 
     public Cat(String name) {
+        super(name);
         this.name = name;
     }
 
