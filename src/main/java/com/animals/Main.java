@@ -1,16 +1,16 @@
 package com.animals;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 import com.animals.basic.Animal;
-import com.animals.basic.Cat;
+import com.animals.enums.TypeOfAnimal;
+import com.animals.factory.AnimalFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-import static java.lang.Math.random;
+import static java.util.Arrays.asList;
 
 public class Main {
 
@@ -18,7 +18,7 @@ public class Main {
 
     private static final int DAY_IN_MINUTES = 60 * 24;
     private static final int NUMBER_OF_CATS = 2;
-    private static final List<String> CAT_NAMES = Arrays.asList("Mika", "Hubert", "Bartus");
+    private static final List<String> CAT_NAMES = asList("Mika", "Hubert", "Bartus");
 
     public static void main(String[] args) {
 
@@ -26,7 +26,7 @@ public class Main {
 
         while (i < NUMBER_OF_CATS) {
             int minutesToEndOfDay = DAY_IN_MINUTES;
-            Animal cat = new Cat(CAT_NAMES.get(i));
+            Animal cat = AnimalFactory.getAnimal(asList(TypeOfAnimal.values()).get(generateRandomNumber(TypeOfAnimal.values().length)));
             while (minutesToEndOfDay > 0) {
                 log.info("Dane na temat {}: ", cat.getName());
                 int actionTime = generateRandomNumber();

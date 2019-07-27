@@ -1,14 +1,20 @@
 package com.animals.basic;
 
-public interface Animal {
+public abstract class Animal {
+//todo wyodrębnić elementy wspólne dla psa i kota
+    protected int weight; //todo ustawiac wage w konstruktorze
 
-    String getName();
+    Animal(final String name){
 
-    boolean isRested();
+    }
 
-    String makeVoice(int numberOfVoices);
+    public abstract String getName();
 
-    void walkInMinutes(int minutes);
+    public abstract boolean isRested();
 
-    void sleep(int minutes);
+    public abstract String makeVoice(int numberOfVoices);
+
+    public abstract void walkInMinutes(int minutes);
+
+    public abstract void sleep(int minutes);
 }

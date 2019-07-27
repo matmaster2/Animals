@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import static com.animals.enums.DogVoices.*;
 
-public class Dog implements Animal {
+public class Dog extends Animal {
 
     private static final Logger log = LogManager.getLogger(Dog.class);
 
