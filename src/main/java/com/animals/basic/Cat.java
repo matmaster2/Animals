@@ -1,16 +1,10 @@
 package com.animals.basic;
 
 import com.animals.enums.CatVoices;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import static com.animals.enums.CatVoices.*;
 
 public class Cat extends Animal {
-
-    private static final Logger log = LogManager.getLogger(Cat.class);
-
-    private static final int WALK_SPEED = 20;
 
     private final String name;
     private int energy = 0;

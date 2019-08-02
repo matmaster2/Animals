@@ -3,19 +3,8 @@ package com.animals.basic;
 import static com.animals.enums.DogVoices.*;
 
 import com.animals.enums.DogVoices;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-
 
 public class Dog extends Animal {
-
-    private static final Logger log = LogManager.getLogger(Dog.class);
-
-    private static final int WALK_SPEED = 20;
-
-    private final String name;
-    private int energy = 0;
 
     public Dog(String name) {
         super(name);
