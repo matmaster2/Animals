@@ -1,14 +1,12 @@
 package com.animals;
 
-import java.util.List;
-import java.util.Random;
-
 import com.animals.basic.Animal;
 import com.animals.enums.TypeOfAnimal;
 import com.animals.factory.AnimalFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Random;
 
 import static java.util.Arrays.asList;
 
@@ -18,7 +16,6 @@ public class Main {
 
     private static final int DAY_IN_MINUTES = 60 * 24;
     private static final int NUMBER_OF_CATS = 2;
-    private static final List<String> CAT_NAMES = asList("Mika", "Hubert", "Bartus");
 
     public static void main(String[] args) {
 
