@@ -1,22 +1,13 @@
 package com.animals.basic;
 
-import static com.animals.enums.DogVoices.*;
-
 import com.animals.enums.DogVoices;
+
+import static com.animals.enums.DogVoices.*;
 
 public class Dog extends Animal {
 
-    public Dog(String name) {
-        super(name);
-        this.name = name;
-    }
-
-    @Override
-    public String getName() { return name; }
-
-    @Override
-    public boolean isRested() {
-        return energy >= 0;
+    public Dog(String name, int weight, int walkSpeed) {
+        super(name, weight, walkSpeed);
     }
 
     public DogVoices howRested() {
@@ -32,12 +23,6 @@ public class Dog extends Animal {
             return RESTED;
         }
     }
-    @Override
-    public void sleep(int minutes) {
-        this.energy = this.energy + minutes / 2;
-    }
-
-    public void sleep(int hour, int minutes) { sleep(minutes + hour * 60); }
 
     public String makeVoice() {
         String voices = howRested().getVoice();
@@ -53,15 +38,6 @@ public class Dog extends Animal {
             manyVoices.append(makeVoice()).append(" ");
         }
         return manyVoices.toString();
-    }
-
-    @Override
-    public void walkInMinutes(int minutes) {
-        this.energy = this.energy - minutes;
-    }
-
-    public void walkInMeters(int meteres) {
-        this.energy = this.energy - meteres / WALK_SPEED;
     }
 }
 

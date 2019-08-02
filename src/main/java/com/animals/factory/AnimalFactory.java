@@ -5,20 +5,24 @@ import com.animals.basic.Cat;
 import com.animals.basic.Dog;
 import com.animals.enums.TypeOfAnimal;
 
-import static com.animals.enums.TypeOfAnimal.*;
-
 public class AnimalFactory {
 
-    private AnimalFactory(){}
+    private AnimalFactory() {
+    }
 
-    public static Animal getAnimal(TypeOfAnimal typeOfAnimal){
+    public static Animal getAnimal(TypeOfAnimal typeOfAnimal) {
 
-        switch (typeOfAnimal){
-            case SKINNY_CAT: return new Cat("Azzura");
-            case CAT: return new Cat("Bartek");
-            case FAT_CAT: return new Cat ("Hubert");
-            case DOG: return new Dog("Ciapek");
-            default: return null;
+        switch (typeOfAnimal) {
+            case SKINNY_CAT:
+                return new Cat("Azzura", 30, 20);
+            case CAT:
+                return new Cat("Bartek", 100, 30);
+            case FAT_CAT:
+                return new Cat("Hubert", 150, 5);
+            case DOG:
+                return new Dog("Ciapek", 50, 50);
+            default:
+                return null;
         }
     }
 }

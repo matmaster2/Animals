@@ -7,26 +7,42 @@ public abstract class Animal {
 
     protected final Logger log = LogManager.getLogger(getClass());
 
-    protected static final int WALK_SPEED = 20;
-
-    protected String name;
+    protected final int walkSpeed;
+    protected final String name;
+    protected final int weight;
     protected int energy = 0;
 
-    protected int weight;
-    
-    Animal(final String name){
-    }
-    Animal(int weight){
-        this.weight=weight;
+    Animal(String name, int weight, int walkSpeed) {
+        this.weight = weight;
+        this.name = name;
+        this.walkSpeed = walkSpeed;
     }
 
-    public abstract String getName();
+    public String getName() {
+        return name;
+    }
 
-    public abstract boolean isRested();
+    public boolean isRested() {
+        return energy >= 0;
+    }
+
+    public void sleep(int minutes) {
+        this.energy = this.energy + minutes / 2;
+    }
+
+    public void sleep(int hour, int minutes) {
+        sleep(minutes + hour * 60);
+    }
 
     public abstract String makeVoice(int numberOfVoices);
 
-    public abstract void walkInMinutes(int minutes);
+    public void walkInMinutes(int minutes) {
+        this.energy = this.energy - minutes;
+    }
 
-    public abstract void sleep(int minutes);
+    public void walkInMeters(int meters) {
+        this.energy = this.energy - meters / walkSpeed;
+    }
+
+
 }

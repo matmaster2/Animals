@@ -6,25 +6,11 @@ import static com.animals.enums.CatVoices.*;
 
 public class Cat extends Animal {
 
-    private final String name;
-    private int energy = 0;
-
-    public Cat(String name) {
-        super(name);
-        this.name = name;
+    public Cat(String name, int weight, int walkSpeed) {
+        super(name, weight, walkSpeed);
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public boolean isRested() {
-        return energy >= 0;
-    }
-
-    public CatVoices howRested(){
+    public CatVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
@@ -36,14 +22,6 @@ public class Cat extends Animal {
         } else {
             return RESTED;
         }
-    }
-    @Override
-    public void sleep(int minutes) {
-        this.energy = this.energy + minutes / 2;
-    }
-
-    public void sleep(int hour, int minutes) {
-        sleep(minutes + hour * 60);
     }
 
     public String makeVoice() {
@@ -60,15 +38,6 @@ public class Cat extends Animal {
             manyVoices.append(makeVoice()).append(" ");
         }
         return manyVoices.toString();
-    }
-
-    @Override
-    public void walkInMinutes(int minutes) {
-        this.energy = this.energy - minutes;
-    }
-
-    public void walkInMeters(int meteres) {
-        this.energy = this.energy - meteres / WALK_SPEED;
     }
 }
 
