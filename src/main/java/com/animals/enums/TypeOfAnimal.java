@@ -4,5 +4,6 @@ public enum TypeOfAnimal {
     FAT_CAT,
     SKINNY_CAT,
     CAT,
-    DOG
+    DOG,
+    COW
 }

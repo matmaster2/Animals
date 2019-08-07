@@ -15,7 +15,7 @@ public class Main {
     private static final Logger log = LogManager.getLogger(Main.class);
 
     private static final int DAY_IN_MINUTES = 60 * 24;
-    private static final int NUMBER_OF_CATS = 2;
+    private static final int NUMBER_OF_CATS = 5;
 
     public static void main(String[] args) {
 

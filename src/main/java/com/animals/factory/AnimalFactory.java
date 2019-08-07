@@ -2,6 +2,7 @@ package com.animals.factory;
 
 import com.animals.basic.Animal;
 import com.animals.basic.Cat;
+import com.animals.basic.Cow;
 import com.animals.basic.Dog;
 import com.animals.enums.TypeOfAnimal;
 
@@ -21,6 +22,8 @@ public class AnimalFactory {
                 return new Cat("Hubert", 150, 5);
             case DOG:
                 return new Dog("Ciapek", 50, 50);
+            case COW:
+                return new Cow("Mucka", 350, 10);
             default:
                 return null;
         }
