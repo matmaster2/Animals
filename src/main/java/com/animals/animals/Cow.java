@@ -1,4 +1,4 @@
-package com.animals.basic;
+package com.animals.animals;
 
 import com.animals.enums.CowVoices;
 import static com.animals.enums.CowVoices.*;

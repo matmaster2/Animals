@@ -1,9 +1,9 @@
 package com.animals.factory;
 
-import com.animals.basic.Animal;
-import com.animals.basic.Cat;
-import com.animals.basic.Cow;
-import com.animals.basic.Dog;
+import com.animals.animals.Animal;
+import com.animals.animals.Cat;
+import com.animals.animals.Cow;
+import com.animals.animals.Dog;
 import com.animals.enums.TypeOfAnimal;
 
 public class AnimalFactory {
