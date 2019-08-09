@@ -30,6 +30,12 @@ public class AnimalFactory {
     }
 }
 
+/*
+todo:
+   - nowa klasa do czytania losowego imienia dla danego zwierzecia,
+   - co do nowej klasy -> w tej klasie bede musial przeczytac imiona z odpowiedneigo pliku (streamy!),
+   - uzyj try with resources.
+*/
 
 
 /*
