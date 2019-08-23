@@ -1,0 +1,7 @@
+{
+    rested: "jestem zmeczony",
+    halfRested: "jestem pol-zmeczony",
+    normal: "jestem normalnie zmeczony",
+    tired: "jestem w cholere zmeczony",
+    exhausted: "djsada umieram"
+}

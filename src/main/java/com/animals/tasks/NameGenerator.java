@@ -24,14 +24,13 @@ public class NameGenerator {
             } while (name != null);
             name = generateRandomName(names);
         } catch (Exception e) {
-            log.info("Wystapil blad w klasie " + NameGenerator.class);
-            e.printStackTrace();
+            log.error("Wystapil blad w klasie: {} - {} ", NameGenerator.class, e);
         }
     }
 
 
     public String getCatName() {
-        readFromFile(".\\src\\main\\resources\\names\\cats_names");
+        readFromFile(".\\src\\main\\resources\\names\\cats_names"); //todo ogarnac te sciezki (skrocic je)
         return name;
     }
 
@@ -54,3 +53,6 @@ public class NameGenerator {
         return (names.get((int) (Math.random() * names.size())));
     }
 }
+
+
+//todo random number genearator klasa

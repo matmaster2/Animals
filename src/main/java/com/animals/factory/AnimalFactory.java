@@ -5,11 +5,13 @@ import com.animals.enums.TypeOfAnimal;
 import com.animals.tasks.NameGenerator;
 
 public class AnimalFactory {
+    private static final NameGenerator nameGenerator = new NameGenerator();
 
-    private AnimalFactory() {}
+    private AnimalFactory() {
+    }
 
     public static Animal getAnimal(TypeOfAnimal typeOfAnimal) {
-        NameGenerator nameGenerator = new NameGenerator();
+
         switch (typeOfAnimal) {
             case SKINNY_CAT:
                 return new Cat(nameGenerator.getCatName(), 30, 20);
@@ -29,7 +31,7 @@ public class AnimalFactory {
     }
 }
 
-
+//todo waga zwierzat ma byc randomowa
 
 /*
  public static Animal getAnimal(TypeOfAnimal typeOfAnimal){
