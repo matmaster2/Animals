@@ -3,7 +3,6 @@ package com.animals.factory;
 import com.animals.enums.TypeOfAnimal;
 import com.animals.model.AnimalVoice;
 import com.google.gson.Gson;
-import com.sun.istack.internal.NotNull;
 
 import java.io.*;
 
@@ -15,16 +14,16 @@ public class AnimalVoiceFactory {
     private AnimalVoiceFactory() {
     }
 
-    public static AnimalVoice getAnimal(TypeOfAnimal typeOfAnimal) {
+    public static AnimalVoice getVoice(TypeOfAnimal typeOfAnimal) {
 
         switch (typeOfAnimal) {
             case SKINNY_CAT:
-                return generateAnimalVoice("./voices/cats_voices");
+                return generateAnimalVoice("voices/cats_voices");
         }
         return null;
     }
 
-    private static AnimalVoice generateAnimalVoice(@NotNull String fileName) {
+    private static AnimalVoice generateAnimalVoice(String fileName) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(getSystemClassLoader().getResourceAsStream(fileName)))) { //todo catch null, hint: Optional.ofNullable
             return gson.fromJson(reader, AnimalVoice.class);
         } catch (IOException e) {

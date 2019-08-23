@@ -25,6 +25,7 @@ public class AnimalFactory {
                 return new Cow(nameGenerator.getCowName(), 350, 10);
             case OWL:
                 return new Owl(nameGenerator.getOwlName(), 25, 3);
+                //TODO Kret
             default:
                 return null;
         }
