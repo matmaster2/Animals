@@ -53,10 +53,4 @@ public class NameGenerator {
     private String generateRandomName(List<String> names) {
         return (names.get((int) (Math.random() * names.size())));
     }
-
-    public static void main(String[] args) {
-        System.out.println("Imie to: " + new NameGenerator().getCatName());
-    }
-
-
 }
