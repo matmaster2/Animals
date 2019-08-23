@@ -46,6 +46,3 @@ public abstract class Animal {
 
 
 }
-
-
-//todo dodaj sowe - zastanow sie !!! (  ;)  )

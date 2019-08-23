@@ -30,7 +30,7 @@ public class SimulationOfTheDay {
     public void simulation() {
         List<Animal> animals = generateAnimals();
         for (int i = 1; i <= dayOfLife; i++) {
-            log.info("\t\t\t\t\tDzień: {}", i);
+            log.info("\t\t\t\t\t\t\t\t\t\tDzień: {}", i);
             simulationOfTheDay(animals);
         }
     }
@@ -38,7 +38,7 @@ public class SimulationOfTheDay {
     private void simulationOfTheDay(List<Animal> animals) {
         animals.forEach(animal -> {
             int minutesToEndOfDay = DAY_IN_MINUTES;
-            log.info("\t\t\t\t\tDane na temat {}: ", animal.getName());
+            log.info("\t\t\t\t\t\t\t\t\t\tDane na temat {}: ", animal.getName());
             while (minutesToEndOfDay > 0) {
                 int actionTime = generateRandomNumber();
                 log.info("Czy {} jest wyspany? {}", animal.getName(), animal.isRested());
