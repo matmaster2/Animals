@@ -4,6 +4,8 @@ import com.animals.animals.*;
 import com.animals.enums.TypeOfAnimal;
 import com.animals.tasks.NameGenerator;
 
+import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
+
 public class AnimalFactory {
     private static final NameGenerator nameGenerator = new NameGenerator();
 
@@ -14,26 +16,24 @@ public class AnimalFactory {
 
         switch (typeOfAnimal) {
             case SKINNY_CAT:
-                return new Cat(nameGenerator.getCatName(), 30, 20);
+                return new Cat(nameGenerator.getCatName(), 20+generateRandomNumber(20), 20);
             case CAT:
-                return new Cat(nameGenerator.getCatName(), 100, 30);
+                return new Cat(nameGenerator.getCatName(), 80+generateRandomNumber(40), 30);
             case FAT_CAT:
-                return new Cat(nameGenerator.getCatName(), 150, 5);
+                return new Cat(nameGenerator.getCatName(), 130+generateRandomNumber(20), 5);
             case DOG:
-                return new Dog(nameGenerator.getDogName(), 50, 50);
+                return new Dog(nameGenerator.getDogName(), 30+generateRandomNumber(20), 50);
             case COW:
-                return new Cow(nameGenerator.getCowName(), 350, 10);
+                return new Cow(nameGenerator.getCowName(), 250+generateRandomNumber(40), 10);
             case OWL:
-                return new Owl(nameGenerator.getOwlName(), 25, 3);
+                return new Owl(nameGenerator.getOwlName(), 15+generateRandomNumber(10), 3);
             case TALPA:
-                return new Talpa(nameGenerator.getTalpaName(), 15, 2);
+                return new Talpa(nameGenerator.getTalpaName(), 5+generateRandomNumber(8), 2);
             default:
                 return null;
         }
     }
 }
-
-//todo waga zwierzat ma byc randomowa
 
 /*
  public static Animal getAnimal(TypeOfAnimal typeOfAnimal){
