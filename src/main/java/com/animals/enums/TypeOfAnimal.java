@@ -6,5 +6,6 @@ public enum TypeOfAnimal {
     CAT,
     DOG,
     COW,
-    OWL
+    OWL,
+    TALPA
 }

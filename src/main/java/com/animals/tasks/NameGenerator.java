@@ -51,6 +51,11 @@ public class NameGenerator {
         return name;
     }
 
+    public String getTalpaName(){
+        readFromFile(".\\src\\main\\resources\\names\\talpas_names");
+        return name;
+    }
+
     private String generateRandomName(List<String> names) {
         return (names.get(generateRandomNumber(names.size())));
     }
