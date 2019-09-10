@@ -1,7 +1,7 @@
 {
-    rested: "jestem zmeczony",
-    halfRested: "jestem pol-zmeczony",
-    normal: "jestem normalnie zmeczony",
-    tired: "jestem w cholere zmeczony",
-    exhausted: "djsada umieram"
+    rested: "MIAUUUU! I AM RESTED!",
+    halfRested: "MIAUU! I AM HALF_RESTED!",
+    normal: "normal Miau!",
+    tired: "Miau...ziew",
+    exhausted: "zzz"
 }

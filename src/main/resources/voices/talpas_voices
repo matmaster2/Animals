@@ -1,0 +1,7 @@
+{
+    rested: "KOPKOPKOP! I AM RESTED!",
+    halfRested: "KOPKOP! I AM HALF_RESTED!",
+    normal: "normal Kop!",
+    tired: "Kop...ziew",
+    exhausted: "zzz"
+}
