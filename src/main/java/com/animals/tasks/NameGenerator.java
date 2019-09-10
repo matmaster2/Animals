@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
+
 public class NameGenerator {
 
     private static final Logger log = LogManager.getLogger(NameGenerator.class);
@@ -50,9 +52,7 @@ public class NameGenerator {
     }
 
     private String generateRandomName(List<String> names) {
-        return (names.get((int) (Math.random() * names.size())));
+        return (names.get(generateRandomNumber(names.size())));
     }
 }
 
-
-//todo random number genearator klasa

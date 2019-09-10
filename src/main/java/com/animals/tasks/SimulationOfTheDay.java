@@ -8,8 +8,8 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
+import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
 import static java.util.Arrays.asList;
 
 public class SimulationOfTheDay {
@@ -20,7 +20,6 @@ public class SimulationOfTheDay {
 
     private final int numberOfAnimals;
     private final int dayOfLife;
-    private Random random = new Random();
 
     public SimulationOfTheDay(int numberOfAnimals, int dayOfLife) {
         this.numberOfAnimals = numberOfAnimals;
@@ -71,11 +70,4 @@ public class SimulationOfTheDay {
         return (minutes) / 60;
     }
 
-    private int generateRandomNumber() {
-        return generateRandomNumber(100);
-    }
-
-    private int generateRandomNumber(int scale) {
-        return random.nextInt(scale);
-    }
 }
