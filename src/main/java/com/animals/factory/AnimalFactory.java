@@ -16,7 +16,7 @@ public class AnimalFactory {
 
         switch (typeOfAnimal) {
             case SKINNY_CAT:
-                return new Cat(nameGenerator.getCatName(), 20+generateRandomNumber(20), 20);
+                return new Cat(nameGenerator.getCatName(), 20+generateRandomNumber(20), 20);//todo ogarnij generator (drugi paremetr)
             case CAT:
                 return new Cat(nameGenerator.getCatName(), 80+generateRandomNumber(40), 30);
             case FAT_CAT:
@@ -29,6 +29,7 @@ public class AnimalFactory {
                 return new Owl(nameGenerator.getOwlName(), 15+generateRandomNumber(10), 3);
             case TALPA:
                 return new Talpa(nameGenerator.getTalpaName(), 5+generateRandomNumber(8), 2);
+                //todo pingwin i delfin
             default:
                 return null;
         }
@@ -45,3 +46,4 @@ return switch (typeOfAnimal){
  case DOG -> new Dog("Ciapek");
  };
  }*/
+

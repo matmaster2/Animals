@@ -1,6 +1,8 @@
 ctrl + shift <--- przenoszenie metode/zmienna zaznaczona
 shift + F6  -> zmiana nazwy
 
+ctrl+b lub ctrl+alt+b  wchodzenie w metody
+
 
 static{
 

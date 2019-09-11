@@ -29,6 +29,6 @@ public class AnimalVoiceFactory {
             return gson.fromJson(reader, AnimalVoice.class);
         } catch (IOException e) {
             throw new GenerateException();
-        }
+        } //todo  przerobic to: if(sNull(filepath) + InputStream input =Optional.ofNullable .... + .orElseThrow ->
     }
 }

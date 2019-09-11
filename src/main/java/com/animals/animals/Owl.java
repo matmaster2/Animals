@@ -27,7 +27,7 @@ public class Owl extends Animal {
         String voices = howRested().getVoice();
         log.info(voices);
         this.energy--;
-        return voices;
+        return voices;//todo powtarza sie a nie powinno :(
     }
 
     @Override
