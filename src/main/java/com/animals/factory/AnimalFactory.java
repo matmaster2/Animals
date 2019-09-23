@@ -16,20 +16,20 @@ public class AnimalFactory {
 
         switch (typeOfAnimal) {
             case SKINNY_CAT:
-                return new Cat(nameGenerator.getCatName(), 20+generateRandomNumber(20), 20);//todo ogarnij generator (drugi paremetr)
+                return new Cat(nameGenerator.getCatName(), generateRandomNumber(20, 20), 20);
             case CAT:
-                return new Cat(nameGenerator.getCatName(), 80+generateRandomNumber(40), 30);
+                return new Cat(nameGenerator.getCatName(), generateRandomNumber(80, 40), 30);
             case FAT_CAT:
-                return new Cat(nameGenerator.getCatName(), 130+generateRandomNumber(20), 5);
+                return new Cat(nameGenerator.getCatName(), generateRandomNumber(130, 20), 5);
             case DOG:
-                return new Dog(nameGenerator.getDogName(), 30+generateRandomNumber(20), 50);
+                return new Dog(nameGenerator.getDogName(), generateRandomNumber(30, 20), 50);
             case COW:
-                return new Cow(nameGenerator.getCowName(), 250+generateRandomNumber(40), 10);
+                return new Cow(nameGenerator.getCowName(), generateRandomNumber(250, 40), 10);
             case OWL:
-                return new Owl(nameGenerator.getOwlName(), 15+generateRandomNumber(10), 3);
+                return new Owl(nameGenerator.getOwlName(), generateRandomNumber(15, 10), 3);
             case TALPA:
-                return new Talpa(nameGenerator.getTalpaName(), 5+generateRandomNumber(8), 2);
-                //todo pingwin i delfin
+                return new Talpa(nameGenerator.getTalpaName(), generateRandomNumber(5, 8), 2);
+            //todo pingwin i delfin
             default:
                 return null;
         }
