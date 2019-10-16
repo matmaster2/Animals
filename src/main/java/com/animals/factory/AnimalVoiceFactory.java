@@ -1,7 +1,7 @@
 package com.animals.factory;
 
 import com.animals.enums.TypeOfAnimal;
-import com.animals.exceptions.GenerateException;
+import com.animals.exceptions.CustomException;
 import com.animals.model.AnimalVoice;
 import com.google.gson.Gson;
 
@@ -28,7 +28,20 @@ public class AnimalVoiceFactory {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(getSystemClassLoader().getResourceAsStream(fileName)))) { //todo catch null, hint: Optional.ofNullable
             return gson.fromJson(reader, AnimalVoice.class);
         } catch (IOException e) {
-            throw new GenerateException();
+            throw new CustomException();
         } //todo  przerobic to: if(sNull(filepath) + InputStream input =Optional.ofNullable .... + .orElseThrow ->
     }
 }
+
+
+//    private static AnimalVoice generateAnimalVoice(String filePath) {
+//        if(isNull(filePath))
+//            throw new CustomException();
+//        InputStream inputStream = getSystemClassLoader().getResourceAsStream(filePath);
+//        Optional.ofNullable(inputStream).orElseThrow(CustomException::new);
+//        try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+//            return gson.fromJson(reader, AnimalVoice.class);
+//        } catch (IOException e) {
+//            throw new CustomException();
+//        }
+//    }
