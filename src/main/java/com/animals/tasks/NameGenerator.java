@@ -5,10 +5,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
+import static java.lang.ClassLoader.getSystemClassLoader;
 
 public class NameGenerator {
 
@@ -18,7 +20,7 @@ public class NameGenerator {
 
     private void readFromFile(String filePath) {
         List<String> names = new ArrayList<>();
-        try (BufferedReader fileReader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(getSystemClassLoader().getResourceAsStream(String.valueOf(filePath))))) {
             name = fileReader.readLine();
             do {
                 names.add(name);
@@ -32,27 +34,27 @@ public class NameGenerator {
 
 
     public String getCatName() {
-        readFromFile(".\\src\\main\\resources\\names\\cats_names"); //todo ogarnac te sciezki (skrocic je)
+        readFromFile("names/cats_names");
         return name;
     }
 
     public String getCowName() {
-        readFromFile(".\\src\\main\\resources\\names\\cows_names");
+        readFromFile("names/cows_names");
         return name;
     }
 
     public String getDogName() {
-        readFromFile(".\\src\\main\\resources\\names\\dogs_names");
+        readFromFile("names/dogs_names");
         return name;
     }
 
     public String getOwlName() {
-        readFromFile(".\\src\\main\\resources\\names\\owls_names");
+        readFromFile("names/owls_names");
         return name;
     }
 
     public String getTalpaName(){
-        readFromFile(".\\src\\main\\resources\\names\\talpas_names");
+        readFromFile("names/talpas_names");
         return name;
     }
 
