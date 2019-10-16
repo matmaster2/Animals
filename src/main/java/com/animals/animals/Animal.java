@@ -8,15 +8,15 @@ public abstract class Animal {
 
     protected final Logger log = LogManager.getLogger(getClass());
 
-    protected final int walkSpeed;
+    protected final int moveSpeed;
     protected final String name;
     protected final int weight;
     protected int energy = 0;
 
-    Animal(String name, int weight, int walkSpeed) {
+    Animal(String name, int weight, int moveSpeed) {
         this.weight = weight;
         this.name = name;
-        this.walkSpeed = walkSpeed;
+        this.moveSpeed = moveSpeed;
     }
 
     public String getName() {
@@ -52,12 +52,12 @@ public abstract class Animal {
         return manyVoices.toString();
     }
 
-    public void walkInMinutes(int minutes) {
+    public void moveInMinutes(int minutes) {
         this.energy = this.energy - minutes;
     }
 
-    public void walkInMeters(int meters) {
-        this.energy = this.energy - meters / walkSpeed;
+    public void moveInMeters(int meters) {
+        this.energy = this.energy - meters / moveSpeed;
     }
 
 

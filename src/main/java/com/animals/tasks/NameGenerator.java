@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +54,16 @@ public class NameGenerator {
 
     public String getTalpaName(){
         readFromFile("names/talpas_names");
+        return name;
+    }
+
+    public String getDolphinName(){
+        readFromFile("names/dolphins_names");
+        return name;
+    }
+
+    public String getPenguinName(){
+        readFromFile("names/penguins_names");
         return name;
     }
 

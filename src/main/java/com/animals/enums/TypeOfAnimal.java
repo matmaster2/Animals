@@ -7,5 +7,7 @@ public enum TypeOfAnimal {
     DOG,
     COW,
     OWL,
-    TALPA
+    TALPA,
+    DOLPHIN,
+    PENGUIN
 }

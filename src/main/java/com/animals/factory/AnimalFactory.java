@@ -29,7 +29,10 @@ public class AnimalFactory {
                 return new Owl(nameGenerator.getOwlName(), generateRandomNumber(15, 10), 3);
             case TALPA:
                 return new Talpa(nameGenerator.getTalpaName(), generateRandomNumber(5, 8), 2);
-            //todo pingwin i delfin
+            case DOLPHIN:
+                return new Dolphin(nameGenerator.getDolphinName(), generateRandomNumber(300,50),80);
+            case PENGUIN:
+                return new Penguin(nameGenerator.getPenguinName(), generateRandomNumber(20,20), 30);
             default:
                 return null;
         }
@@ -37,13 +40,13 @@ public class AnimalFactory {
 }
 
 /*
- public static Animal getAnimal(TypeOfAnimal typeOfAnimal){
+     public static Animal getAnimal(TypeOfAnimal typeOfAnimal){
 
-return switch (typeOfAnimal){
- case SKINNY_CAT -> new Cat("Azzura",50,50);
- case CAT -> new Cat("Bartek");
- case FAT_CAT -> new Cat ("Hubert");
- case DOG -> new Dog("Ciapek");
- };
- }*/
+    return switch (typeOfAnimal){
+     case SKINNY_CAT -> new Cat("Azzura",50,50);
+     case CAT -> new Cat("Bartek");
+     case FAT_CAT -> new Cat ("Hubert");
+     case DOG -> new Dog("Ciapek");
+     };
+     }*/
 

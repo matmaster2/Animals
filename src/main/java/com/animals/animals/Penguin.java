@@ -1,16 +1,17 @@
 package com.animals.animals;
 
-import com.animals.enums.TalpaVoices;
+import com.animals.enums.PenguinVoices;
 
-import static com.animals.enums.TalpaVoices.*;
+import static com.animals.enums.PenguinVoices.*;
 
-public class Talpa extends Animal {
+public class Penguin extends Animal {
 
-    public Talpa(String name, int weight, int moveSpeed) {
+
+    public Penguin(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public TalpaVoices howRested() {
+    public PenguinVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
@@ -23,4 +24,5 @@ public class Talpa extends Animal {
             return RESTED;
         }
     }
+
 }

@@ -1,7 +1,7 @@
 {
-    rested: "MUUUU! I AM RESTED!",
-    halfRested: "MUU! I AM HALF_RESTED!",
-    normal: "normal Mu!",
-    tired: "Mu...ziew",
-    exhausted: "zzz"
-}
+     rested: "MUUUU! I AM RESTED!",
+     halfRested: "MUU! I AM HALF_RESTED!",
+     normal: "normal Mu!",
+     tired: "Mu...ziew",
+     exhausted: "zzz"
+ }

@@ -5,8 +5,8 @@ import com.animals.enums.OwlVoices;
 import static com.animals.enums.OwlVoices.*;
 
 public class Owl extends Animal {
-    public Owl(String name, int weight, int walkSpeed) {
-        super(name, weight, walkSpeed);
+    public Owl(String name, int weight, int moveSpeed) {
+        super(name, weight, moveSpeed);
     }
 
     public OwlVoices howRested() {

@@ -6,8 +6,8 @@ import static com.animals.enums.CatVoices.*;
 
 public class Cat extends Animal {
 
-    public Cat(String name, int weight, int walkSpeed) {
-        super(name, weight, walkSpeed);
+    public Cat(String name, int weight, int moveSpeed) {
+        super(name, weight, moveSpeed);
     }
 
     public CatVoices howRested() {

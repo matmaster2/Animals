@@ -44,7 +44,7 @@ public class SimulationOfTheDay {
                 actionTime = actionTime > minutesToEndOfDay ? minutesToEndOfDay : actionTime;
                 if (animal.isRested()) {
                     animal.makeVoice(generateRandomNumber(10));
-                    animal.walkInMinutes(actionTime);
+                    animal.moveInMinutes(actionTime);
                     log.info("{} chodził {} godzin i {} minut", animal.getName(), toHours(actionTime), actionTime % 60);
                 } else {
                     animal.sleep(actionTime);

@@ -1,16 +1,17 @@
 package com.animals.animals;
 
-import com.animals.enums.TalpaVoices;
+import com.animals.enums.DolphinVoices;
 
-import static com.animals.enums.TalpaVoices.*;
+import static com.animals.enums.DolphinVoices.*;
 
-public class Talpa extends Animal {
+public class Dolphin extends Animal{
 
-    public Talpa(String name, int weight, int moveSpeed) {
+
+    public Dolphin(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public TalpaVoices howRested() {
+    public DolphinVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
