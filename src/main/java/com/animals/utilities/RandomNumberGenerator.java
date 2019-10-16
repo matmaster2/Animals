@@ -12,11 +12,11 @@ public class RandomNumberGenerator {
     }
 
     public static int generateRandomNumber(int scale) {
-        return random.nextInt(scale + 1);
+        return random.nextInt(scale);
     }
 
     public static int generateRandomNumber(int startScale, int finalScale) {
-        return startScale + random.nextInt(finalScale + 1);
+        return startScale + random.nextInt(finalScale);
     }
 
 }

@@ -1,6 +1,6 @@
 package com.animals.enums;
 
-public enum OwlVoices {
+public enum OwlVoices implements Voices {
     RESTED("HUU HUU HUU! I AM RESTED!"),
     HALF_RESTED("Hu Hu! I AM HALF_RESTED!"),
     NORMAL("normal Hu Hu!"),

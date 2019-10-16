@@ -1,6 +1,6 @@
 package com.animals.enums;
 
-public enum DogVoices {
+public enum DogVoices implements Voices {
     RESTED("HAUUU! I AM RESTED!"),
     HALF_RESTED("HAUU! I AM HALF_RESTED!"),
     NORMAL("normal Hau!"),

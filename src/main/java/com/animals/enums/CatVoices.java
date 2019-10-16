@@ -1,6 +1,6 @@
 package com.animals.enums;
 
-public enum CatVoices {
+public enum CatVoices implements Voices {
     RESTED("MIAUUUU! I AM RESTED!"),
     HALF_RESTED("MIAUU! I AM HALF_RESTED!"),
     NORMAL("normal Miau!"),

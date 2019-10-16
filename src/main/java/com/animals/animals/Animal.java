@@ -1,5 +1,6 @@
 package com.animals.animals;
 
+import com.animals.enums.Voices;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -34,7 +35,22 @@ public abstract class Animal {
         sleep(minutes + hour * 60);
     }
 
-    public abstract String makeVoice(int numberOfVoices);
+    public abstract Voices howRested();
+
+    public String makeVoice() {
+        String voices = howRested().getVoice();
+        log.info(voices);
+        this.energy--;
+        return voices;
+    }
+
+    public String makeVoice(int numberOfVoices){
+        StringBuilder manyVoices = new StringBuilder();
+        for (int i = 0; i < numberOfVoices; i++) {
+            manyVoices.append(makeVoice()).append(" ");
+        }
+        return manyVoices.toString();
+    }
 
     public void walkInMinutes(int minutes) {
         this.energy = this.energy - minutes;

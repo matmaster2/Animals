@@ -22,21 +22,4 @@ public class Owl extends Animal {
             return RESTED;
         }
     }
-
-    public String makeVoice() {
-        String voices = howRested().getVoice();
-        log.info(voices);
-        this.energy--;
-        return voices;//todo powtarza sie a nie powinno :(
-    }
-
-    @Override
-    public String makeVoice(int numberOfVoices) {
-        StringBuilder manyVoices = new StringBuilder();
-        for (int i = 0; i < numberOfVoices; i++) {
-            manyVoices.append(makeVoice()).append(" ");
-        }
-        return manyVoices.toString();
-    }
-
 }
