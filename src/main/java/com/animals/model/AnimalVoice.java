@@ -1,6 +1,7 @@
 package com.animals.model;
 
 public class AnimalVoice {
+
     private String rested;
     private String halfRested;
     private String normal;
