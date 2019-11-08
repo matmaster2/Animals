@@ -1,22 +1,21 @@
 package com.animals.tasks;
 
 import com.animals.animals.Animal;
-import com.animals.enums.TypeOfAnimal;
-import com.animals.factory.AnimalFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.animals.factory.AnimalFactory.getRandomAnimal;
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
-import static java.util.Arrays.asList;
 
 public class SimulationOfTheDay {
 
     private static final Logger log = LogManager.getLogger(SimulationOfTheDay.class);
 
     private static final int DAY_IN_MINUTES = 60 * 24;
+    private static final String TAB = "\t\t\t\t\t\t\t\t\t\t" ;
 
     private final int numberOfAnimals;
     private final int dayOfLife;
@@ -29,9 +28,8 @@ public class SimulationOfTheDay {
     public void simulation() {
         List<Animal> animals = generateAnimals();
         for (int i = 1; i <= dayOfLife; i++) {
-            log.info("\t\t\t\t\t\t\t\t\t\tDzień: {}", i);
+            log.info(TAB + "Dzień: {}", i);
             simulationOfTheDay(animals);
-
             animals.forEach(System.out::println); //do testow
         }
     }
@@ -39,7 +37,7 @@ public class SimulationOfTheDay {
     private void simulationOfTheDay(List<Animal> animals) {
         animals.forEach(animal -> {
             int minutesToEndOfDay = DAY_IN_MINUTES;
-            log.info("\t\t\t\t\t\t\t\t\t\tDane na temat {}: ", animal.getName());
+            log.info(TAB + "Dane na temat {}: ", animal.getName());
             while (minutesToEndOfDay > 0) {
                 int actionTime = generateRandomNumber();
                 log.info("Czy {} jest wyspany? {}", animal.getName(), animal.isRested());
@@ -63,7 +61,7 @@ public class SimulationOfTheDay {
     private List<Animal> generateAnimals() {
         List<Animal> animalList = new ArrayList<>();
         for (int i = 0; i < numberOfAnimals; i++) {
-            animalList.add(AnimalFactory.getAnimal(asList(TypeOfAnimal.values()).get(generateRandomNumber(TypeOfAnimal.values().length))));
+            animalList.add(getRandomAnimal());
         }
         return animalList;
     }

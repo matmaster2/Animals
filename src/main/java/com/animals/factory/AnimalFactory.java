@@ -8,6 +8,7 @@ import com.animals.enums.TypeOfAnimal;
 import com.animals.tasks.NameGenerator;
 
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
+import static java.util.Arrays.asList;
 
 public class AnimalFactory {
     private static final NameGenerator nameGenerator = new NameGenerator();
@@ -15,8 +16,15 @@ public class AnimalFactory {
     private AnimalFactory() {
     }
 
-    public static Animal getAnimal(TypeOfAnimal typeOfAnimal) {
+    private static TypeOfAnimal getRandomAnimalType() {
+        return asList(TypeOfAnimal.values()).get(generateRandomNumber(TypeOfAnimal.values().length));
+    }
 
+    public static Animal getRandomAnimal() {
+        return getAnimal(getRandomAnimalType());
+    }
+
+    public static Animal getAnimal(TypeOfAnimal typeOfAnimal) {
         switch (typeOfAnimal) {
             case SKINNY_CAT:
                 return new Cat(nameGenerator.getCatName(), generateRandomNumber(20, 20), 20);
