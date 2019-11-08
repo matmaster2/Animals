@@ -1,16 +1,18 @@
-package com.animals.animals;
+package com.animals.animals.water_animals;
 
-import com.animals.enums.DogVoices;
+import com.animals.animals.Animal;
+import com.animals.enums.DolphinVoices;
 
-import static com.animals.enums.DogVoices.*;
+import static com.animals.enums.DolphinVoices.*;
 
-public class Dog extends Animal {
+public class Dolphin extends WaterAnimal {
 
-    public Dog(String name, int weight, int moveSpeed) {
+
+    public Dolphin(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public DogVoices howRested() {
+    public DolphinVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
@@ -24,5 +26,3 @@ public class Dog extends Animal {
         }
     }
 }
-
-

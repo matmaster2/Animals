@@ -1,16 +1,16 @@
-package com.animals.animals;
+package com.animals.animals.land_animals;
 
-import com.animals.enums.TalpaVoices;
+import com.animals.animals.Animal;
+import com.animals.enums.CowVoices;
+import static com.animals.enums.CowVoices.*;
 
-import static com.animals.enums.TalpaVoices.*;
+public class Cow extends LandAnimal {
 
-public class Talpa extends Animal {
-
-    public Talpa(String name, int weight, int moveSpeed) {
+    public Cow(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public TalpaVoices howRested() {
+    public CowVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
@@ -24,3 +24,5 @@ public class Talpa extends Animal {
         }
     }
 }
+
+

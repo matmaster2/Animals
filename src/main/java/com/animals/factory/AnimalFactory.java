@@ -1,6 +1,9 @@
 package com.animals.factory;
 
 import com.animals.animals.*;
+import com.animals.animals.flying_animals.Owl;
+import com.animals.animals.land_animals.*;
+import com.animals.animals.water_animals.Dolphin;
 import com.animals.enums.TypeOfAnimal;
 import com.animals.tasks.NameGenerator;
 

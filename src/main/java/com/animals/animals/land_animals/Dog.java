@@ -1,16 +1,17 @@
-package com.animals.animals;
+package com.animals.animals.land_animals;
 
-import com.animals.enums.PandaVoices;
+import com.animals.animals.Animal;
+import com.animals.enums.DogVoices;
 
-import static com.animals.enums.PandaVoices.*;
+import static com.animals.enums.DogVoices.*;
 
-public class Panda extends Animal {
+public class Dog extends LandAnimal {
 
-    public Panda(String name, int weight, int moveSpeed) {
+    public Dog(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public PandaVoices howRested() {
+    public DogVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
@@ -24,3 +25,5 @@ public class Panda extends Animal {
         }
     }
 }
+
+

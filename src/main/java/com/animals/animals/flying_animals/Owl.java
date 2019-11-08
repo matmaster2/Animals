@@ -1,17 +1,16 @@
-package com.animals.animals;
+package com.animals.animals.flying_animals;
 
-import com.animals.enums.DolphinVoices;
+import com.animals.animals.Animal;
+import com.animals.enums.OwlVoices;
 
-import static com.animals.enums.DolphinVoices.*;
+import static com.animals.enums.OwlVoices.*;
 
-public class Dolphin extends Animal{
-
-
-    public Dolphin(String name, int weight, int moveSpeed) {
+public class Owl extends FlyingAnimal {
+    public Owl(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public DolphinVoices howRested() {
+    public OwlVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {

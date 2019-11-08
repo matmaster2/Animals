@@ -1,15 +1,17 @@
-package com.animals.animals;
+package com.animals.animals.land_animals;
 
-import com.animals.enums.CowVoices;
-import static com.animals.enums.CowVoices.*;
+import com.animals.animals.Animal;
+import com.animals.enums.CatVoices;
 
-public class Cow extends Animal {
+import static com.animals.enums.CatVoices.*;
 
-    public Cow(String name, int weight, int moveSpeed) {
+public class Cat extends LandAnimal {
+
+    public Cat(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public CowVoices howRested() {
+    public CatVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {

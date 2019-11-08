@@ -1,17 +1,18 @@
-package com.animals.animals;
+package com.animals.animals.land_animals;
 
-import com.animals.enums.SlothVoices;
+import com.animals.animals.Animal;
+import com.animals.enums.PenguinVoices;
 
-import static com.animals.enums.SlothVoices.*;
+import static com.animals.enums.PenguinVoices.*;
 
-public class Sloth extends Animal {
+public class Penguin extends LandAnimal {
 
 
-    public Sloth(String name, int weight, int moveSpeed) {
+    public Penguin(String name, int weight, int moveSpeed) {
         super(name, weight, moveSpeed);
     }
 
-    public SlothVoices howRested() {
+    public PenguinVoices howRested() {
         if (energy < -10) {
             return EXHAUSTED;
         } else if (energy < 0) {
@@ -24,4 +25,5 @@ public class Sloth extends Animal {
             return RESTED;
         }
     }
+
 }

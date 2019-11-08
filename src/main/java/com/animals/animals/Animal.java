@@ -13,7 +13,7 @@ public abstract class Animal {
     protected final int weight;
     protected int energy = 0;
 
-    Animal(String name, int weight, int moveSpeed) {
+    public Animal(String name, int weight, int moveSpeed) {
         this.weight = weight;
         this.name = name;
         this.moveSpeed = moveSpeed;
