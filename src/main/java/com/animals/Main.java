@@ -11,7 +11,7 @@ public class Main {
         SimulationOfTheDay simulationOfTheDay = new SimulationOfTheDay(3, 3);
         simulationOfTheDay.simulation();
 
-      // System.out.println(AnimalVoiceFactory.getVoice(TypeOfAnimal.SKINNY_CAT));
+       System.out.println(AnimalVoiceFactory.getVoice(TypeOfAnimal.SKINNY_CAT));
     }
 
 }

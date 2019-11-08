@@ -60,5 +60,11 @@ public abstract class Animal {
         this.energy = this.energy - meters / moveSpeed;
     }
 
-
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", type='" + this.getClass() + '\'' +
+                '}';
+    }
 }
