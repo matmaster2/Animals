@@ -33,6 +33,10 @@ public class AnimalFactory {
                 return new Dolphin(nameGenerator.getDolphinName(), generateRandomNumber(300,50),80);
             case PENGUIN:
                 return new Penguin(nameGenerator.getPenguinName(), generateRandomNumber(20,20), 30);
+            case PANDA:
+                return new Panda(nameGenerator.getPandaName(), generateRandomNumber(200, 100), 10);
+            case SLOTH:
+                return new Sloth(nameGenerator.getSlothName(), generateRandomNumber(80, 40),2);
             default:
                 return null;
         }

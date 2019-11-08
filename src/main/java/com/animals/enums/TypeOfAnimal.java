@@ -1,13 +1,15 @@
 package com.animals.enums;
 
 public enum TypeOfAnimal {
-    FAT_CAT,
     SKINNY_CAT,
     CAT,
+    FAT_CAT,
     DOG,
     COW,
     OWL,
     TALPA,
     DOLPHIN,
-    PENGUIN
+    PENGUIN,
+    PANDA,
+    SLOTH
 }

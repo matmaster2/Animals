@@ -24,7 +24,25 @@ public class AnimalVoiceFactory {
 
         switch (typeOfAnimal) {
             case SKINNY_CAT:
+            case CAT:
+            case FAT_CAT:
                 return generateAnimalVoice("voices/cats_voices");
+            case DOG:
+                return generateAnimalVoice("voices/dogs_voices");
+            case COW:
+                return generateAnimalVoice("voices/cows_voices");
+            case OWL:
+                return generateAnimalVoice("voices/owls_voices");
+            case TALPA:
+                return generateAnimalVoice("voices/talpas_voices");
+            case DOLPHIN:
+                return generateAnimalVoice("voices/dolphins_voices");
+            case PENGUIN:
+                return generateAnimalVoice("voices/penguins_voices");
+            case PANDA:
+                return generateAnimalVoice("voices/pandas_voices");
+            case SLOTH:
+                return generateAnimalVoice("voices/sloths_voices");
         }
         return null;
     }

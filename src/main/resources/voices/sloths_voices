@@ -1,0 +1,8 @@
+{
+     rested: "zzz",
+     halfRested: "zzzzzzzzz",
+     normal: "zzzZZzzZzZz",
+     tired: "ZZZ",
+     exhausted: "ZZZZZZZZZ"
+ }
+

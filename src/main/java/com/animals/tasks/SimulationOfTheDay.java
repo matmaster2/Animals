@@ -31,6 +31,8 @@ public class SimulationOfTheDay {
         for (int i = 1; i <= dayOfLife; i++) {
             log.info("\t\t\t\t\t\t\t\t\t\tDzień: {}", i);
             simulationOfTheDay(animals);
+
+            animals.forEach(System.out::println); //do testow
         }
     }
 

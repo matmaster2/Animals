@@ -67,6 +67,16 @@ public class NameGenerator {
         return name;
     }
 
+    public String getPandaName(){
+        readFromFile("names/pandas_names");
+        return name;
+    }
+
+    public String getSlothName(){
+        readFromFile("names/sloths_names");
+        return name;
+    }
+
     private String generateRandomName(List<String> names) {
         return (names.get(generateRandomNumber(names.size())));
     }

@@ -1,6 +1,6 @@
 {
      rested: "PIU PIU PIU! I AM RESTED!",
-     halfRested: Piu Piu! I AM HALF_RESTED!",
+     halfRested: "Piu Piu! I AM HALF_RESTED!",
      normal: "normal Piu!",
      tired: "Pi...ziew",
      exhausted: "zzz"
