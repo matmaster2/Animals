@@ -30,7 +30,9 @@ public class SimulationOfTheDay {
         for (int i = 1; i <= dayOfLife; i++) {
             log.info(TAB + "Dzień: {}", i);
             simulationOfTheDay(animals);
+            System.out.println(animals.get(0).getTypeOfAnimal()); //do testow
             animals.forEach(System.out::println); //do testow
+
         }
     }
 

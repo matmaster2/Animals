@@ -53,15 +53,3 @@ public class AnimalFactory {
         }
     }
 }
-
-/*
-     public static Animal getAnimal(TypeOfAnimal typeOfAnimal){
-
-    return switch (typeOfAnimal){
-     case SKINNY_CAT -> new Cat("Azzura",50,50);
-     case CAT -> new Cat("Bartek");
-     case FAT_CAT -> new Cat ("Hubert");
-     case DOG -> new Dog("Ciapek");
-     };
-     }*/
-

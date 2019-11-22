@@ -1,6 +1,15 @@
 package com.animals.model;
 
+import com.animals.enums.TypeOfAnimal;
+import com.animals.factory.AnimalVoiceFactory;
+
 public class AnimalVoice {
+
+    private TypeOfAnimal typeOfAnimal;
+
+    public AnimalVoice(TypeOfAnimal typeOfAnimal){
+        this.typeOfAnimal = typeOfAnimal;
+    }
 
     private String rested;
     private String halfRested;
