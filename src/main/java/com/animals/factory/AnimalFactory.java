@@ -27,6 +27,7 @@ public class AnimalFactory {
 
     public static Animal getAnimal(TypeOfAnimal typeOfAnimal) {
         AnimalVoice animalVoice = AnimalVoiceFactory.getVoice(typeOfAnimal);
+        //TODO dodaj do każdego zwierzęcia wzrost
         switch (typeOfAnimal) {
             case SKINNY_CAT:
                 return new Cat(nameGenerator.getCatName(), generateRandomNumber(20, 20), 20, animalVoice);
