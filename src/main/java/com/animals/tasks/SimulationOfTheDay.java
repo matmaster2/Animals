@@ -15,7 +15,7 @@ public class SimulationOfTheDay { // ta klasa jest SimulationOfTheDay czy ona s≈
     private static final Logger log = LogManager.getLogger(SimulationOfTheDay.class);
 
     private static final int DAY_IN_MINUTES = 60 * 24;
-    private static final String TAB = "\t\t\t\t\t\t\t\t\t\t" ;
+    private static final String TAB = "\t\t\t\t\t\t\t\t\t\t";
 
     private final int numberOfAnimals;
     private final int dayOfLife;

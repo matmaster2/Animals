@@ -17,15 +17,14 @@ public abstract class Animal {
     protected final int moveSpeed;
     protected final String name;
     protected final int weight;
+    protected final AnimalVoice animalVoice;
     protected int energy = 0;
 
-
-    private final AnimalVoice animalVoice = AnimalVoiceFactory.getVoice(getTypeOfAnimal());
-
-    public Animal(String name, int weight, int moveSpeed) {
+    public Animal(String name, int weight, int moveSpeed, AnimalVoice animalVoice) {
         this.weight = weight;
         this.name = name;
         this.moveSpeed = moveSpeed;
+        this.animalVoice = animalVoice;
     }
 
     public String getName() {
@@ -58,7 +57,6 @@ public abstract class Animal {
 
     public String makeVoice() {
         RestLevel restLevel = howRested();
-        log.info(restLevel);
         this.energy--;
         switch (restLevel) {
             case EXHAUSTED:
@@ -77,7 +75,9 @@ public abstract class Animal {
     public String makeVoice(int numberOfVoices) {
         StringBuilder manyVoices = new StringBuilder();
         for (int i = 0; i < numberOfVoices; i++) {
-            manyVoices.append(makeVoice()).append(" ");
+            String voice = makeVoice();
+            log.info(voice);
+            manyVoices.append(voice).append(" ");
         }
         return manyVoices.toString();
     }

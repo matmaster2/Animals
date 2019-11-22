@@ -1,10 +1,12 @@
 package com.animals.animals.land_animals;
 
+import com.animals.model.AnimalVoice;
+
 public class Sloth extends LandAnimal {
 
 
-    public Sloth(String name, int weight, int moveSpeed) {
-        super(name, weight, moveSpeed);
+    public Sloth(String name, int weight, int moveSpeed, AnimalVoice animalVoice) {
+        super(name, weight, moveSpeed, animalVoice);
     }
 
 
