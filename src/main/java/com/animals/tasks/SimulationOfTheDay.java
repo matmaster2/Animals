@@ -32,7 +32,6 @@ public class SimulationOfTheDay {
             simulationOfTheDay(animals);
             System.out.println(animals.get(0).getTypeOfAnimal()); //do testow
             animals.forEach(System.out::println); //do testow
-
         }
     }
 

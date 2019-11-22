@@ -8,8 +8,6 @@ import com.animals.model.AnimalVoice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.lang.reflect.Type;
-
 import static com.animals.enums.RestLevel.*;
 
 public abstract class Animal {
@@ -21,8 +19,8 @@ public abstract class Animal {
     protected final int weight;
     protected int energy = 0;
 
-    private final AnimalVoice animalVoice = new AnimalVoice(getTypeOfAnimal()); //todo nie moze byc puste! (instancja klasy)
-    //todo nie dasz rady zrobic tego tutaj hehehe (ze hint)
+
+    private final AnimalVoice animalVoice = AnimalVoiceFactory.getVoice(getTypeOfAnimal());
 
     public Animal(String name, int weight, int moveSpeed) {
         this.weight = weight;
@@ -92,7 +90,7 @@ public abstract class Animal {
         this.energy = this.energy - meters / moveSpeed;
     }
 
-    public TypeOfAnimal getTypeOfAnimal(){
+    public TypeOfAnimal getTypeOfAnimal() {
         return TypeOfAnimal.valueOf(this.getClass().getSimpleName().toUpperCase());
     }
 
