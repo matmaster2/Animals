@@ -48,6 +48,10 @@ public class AnimalFactory {
                 return new Panda(nameGenerator.getPandaName(), generateRandomNumber(200, 100), 10);
             case SLOTH:
                 return new Sloth(nameGenerator.getSlothName(), generateRandomNumber(80, 40),2);
+                //TODO dodaj pande czerwoną
+                //TODO dodaj narwala
+                //TODO dodaj 3 gatunki krowy
+                //TODO dodaj jaka
             default:
                 return null;
         }

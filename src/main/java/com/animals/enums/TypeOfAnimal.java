@@ -12,4 +12,6 @@ public enum TypeOfAnimal {
     PENGUIN,
     PANDA,
     SLOTH
+
+    //optional todo get list of values
 }

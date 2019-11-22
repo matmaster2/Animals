@@ -10,7 +10,7 @@ import java.util.List;
 import static com.animals.factory.AnimalFactory.getRandomAnimal;
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
 
-public class SimulationOfTheDay {
+public class SimulationOfTheDay { // ta klasa jest SimulationOfTheDay czy ona służy do SimulationOfTheDay? chodzi o nazwę
 
     private static final Logger log = LogManager.getLogger(SimulationOfTheDay.class);
 
@@ -61,7 +61,7 @@ public class SimulationOfTheDay {
 
     private List<Animal> generateAnimals() {
         List<Animal> animalList = new ArrayList<>();
-        for (int i = 0; i < numberOfAnimals; i++) {
+        for (int i = 0; i < numberOfAnimals; i++) { //todo IntStream
             animalList.add(getRandomAnimal());
         }
         return animalList;

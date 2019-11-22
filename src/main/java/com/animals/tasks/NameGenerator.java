@@ -19,7 +19,7 @@ public class NameGenerator {
 
     private void readFromFile(String filePath) {
         List<String> names = new ArrayList<>();
-        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(getSystemClassLoader().getResourceAsStream(String.valueOf(filePath))))) {
+        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(getSystemClassLoader().getResourceAsStream(String.valueOf(filePath))))) { //TODO catch null
             name = fileReader.readLine();
             do {
                 names.add(name);
