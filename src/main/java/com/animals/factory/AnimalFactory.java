@@ -1,15 +1,15 @@
 package com.animals.factory;
 
 import com.animals.animals.Animal;
-import com.animals.animals.flying_animals.Owl;
-import com.animals.animals.land_animals.*;
-import com.animals.animals.water_animals.Dolphin;
-import com.animals.enums.TypeOfAnimal;
+import com.animals.animals.types.FlyingAnimal;
+import com.animals.animals.types.LandAnimal;
+import com.animals.animals.types.WaterAnimal;
+import com.animals.enums.AnimalSpecies;
 import com.animals.model.AnimalVoice;
 import com.animals.tasks.NameGenerator;
 
+import static com.animals.enums.AnimalSpecies.getAnimalSpieces;
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
-import static java.util.Arrays.asList;
 
 public class AnimalFactory {
     private static final NameGenerator nameGenerator = new NameGenerator();
@@ -17,40 +17,40 @@ public class AnimalFactory {
     private AnimalFactory() {
     }
 
-    private static TypeOfAnimal getRandomAnimalType() {
-        return asList(TypeOfAnimal.values()).get(generateRandomNumber(TypeOfAnimal.values().length));
+    private static AnimalSpecies getRandomAnimalType() {
+        return getAnimalSpieces().get(generateRandomNumber(getAnimalSpieces().size()));
     }
 
     public static Animal getRandomAnimal() {
         return getAnimal(getRandomAnimalType());
     }
 
-    public static Animal getAnimal(TypeOfAnimal typeOfAnimal) {
-        AnimalVoice animalVoice = AnimalVoiceFactory.getVoice(typeOfAnimal);
+    public static Animal getAnimal(AnimalSpecies animalSpecies) {
+        AnimalVoice animalVoice = AnimalVoiceFactory.getVoice(animalSpecies);
         //TODO dodaj do każdego zwierzęcia wzrost
-        switch (typeOfAnimal) {
+        switch (animalSpecies) {
             case SKINNY_CAT:
-                return new Cat(nameGenerator.getCatName(), generateRandomNumber(20, 20), 20, animalVoice);
+                return new LandAnimal(nameGenerator.getCatName(), generateRandomNumber(20, 20), 20, animalVoice, animalSpecies);
             case CAT:
-                return new Cat(nameGenerator.getCatName(), generateRandomNumber(80, 40), 30, animalVoice);
+                return new LandAnimal(nameGenerator.getCatName(), generateRandomNumber(80, 40), 30, animalVoice, animalSpecies);
             case FAT_CAT:
-                return new Cat(nameGenerator.getCatName(), generateRandomNumber(130, 20), 5, animalVoice);
+                return new LandAnimal(nameGenerator.getCatName(), generateRandomNumber(130, 20), 5, animalVoice, animalSpecies);
             case DOG:
-                return new Dog(nameGenerator.getDogName(), generateRandomNumber(30, 20), 50, animalVoice);
+                return new LandAnimal(nameGenerator.getDogName(), generateRandomNumber(30, 20), 50, animalVoice, animalSpecies);
             case COW:
-                return new Cow(nameGenerator.getCowName(), generateRandomNumber(250, 40), 10, animalVoice);
+                return new LandAnimal(nameGenerator.getCowName(), generateRandomNumber(250, 40), 10, animalVoice, animalSpecies);
             case OWL:
-                return new Owl(nameGenerator.getOwlName(), generateRandomNumber(15, 10), 3, animalVoice);
+                return new FlyingAnimal(nameGenerator.getOwlName(), generateRandomNumber(15, 10), 3, animalVoice, animalSpecies);
             case TALPA:
-                return new Talpa(nameGenerator.getTalpaName(), generateRandomNumber(5, 8), 2, animalVoice);
+                return new LandAnimal(nameGenerator.getTalpaName(), generateRandomNumber(5, 8), 2, animalVoice, animalSpecies);
             case DOLPHIN:
-                return new Dolphin(nameGenerator.getDolphinName(), generateRandomNumber(300, 50), 80, animalVoice);
+                return new WaterAnimal(nameGenerator.getDolphinName(), generateRandomNumber(300, 50), 80, animalVoice, animalSpecies);
             case PENGUIN:
-                return new Penguin(nameGenerator.getPenguinName(), generateRandomNumber(20, 20), 30, animalVoice);
+                return new LandAnimal(nameGenerator.getPenguinName(), generateRandomNumber(20, 20), 30, animalVoice, animalSpecies);
             case PANDA:
-                return new Panda(nameGenerator.getPandaName(), generateRandomNumber(200, 100), 10, animalVoice);
+                return new LandAnimal(nameGenerator.getPandaName(), generateRandomNumber(200, 100), 10, animalVoice, animalSpecies);
             case SLOTH:
-                return new Sloth(nameGenerator.getSlothName(), generateRandomNumber(80, 40), 2, animalVoice);
+                return new LandAnimal(nameGenerator.getSlothName(), generateRandomNumber(80, 40), 2, animalVoice,animalSpecies);
             //TODO dodaj pande czerwoną
             //TODO dodaj narwala
             //TODO dodaj 3 gatunki krowy

@@ -1,6 +1,6 @@
 package com.animals.factory;
 
-import com.animals.enums.TypeOfAnimal;
+import com.animals.enums.AnimalSpecies;
 import com.animals.exceptions.CustomException;
 import com.animals.model.AnimalVoice;
 import com.google.gson.Gson;
@@ -20,9 +20,9 @@ public class AnimalVoiceFactory {
     private AnimalVoiceFactory() {
     }
 
-    public static AnimalVoice getVoice(TypeOfAnimal typeOfAnimal) {
+    public static AnimalVoice getVoice(AnimalSpecies animalSpecies) {
 
-        switch (typeOfAnimal) {
+        switch (animalSpecies) {
             case SKINNY_CAT:
             case CAT:
             case FAT_CAT:

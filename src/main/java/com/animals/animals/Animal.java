@@ -1,9 +1,8 @@
 package com.animals.animals;
 
 
+import com.animals.enums.AnimalSpecies;
 import com.animals.enums.RestLevel;
-import com.animals.enums.TypeOfAnimal;
-import com.animals.factory.AnimalVoiceFactory;
 import com.animals.model.AnimalVoice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,13 +17,15 @@ public abstract class Animal {
     protected final String name;
     protected final int weight;
     protected final AnimalVoice animalVoice;
+    protected final AnimalSpecies animalSpecies;
     protected int energy = 0;
 
-    public Animal(String name, int weight, int moveSpeed, AnimalVoice animalVoice) {
+    public Animal(String name, int weight, int moveSpeed, AnimalVoice animalVoice, AnimalSpecies animalSpecies) {
         this.weight = weight;
         this.name = name;
         this.moveSpeed = moveSpeed;
         this.animalVoice = animalVoice;
+        this.animalSpecies = animalSpecies;
     }
 
     public String getName() {
@@ -90,15 +91,16 @@ public abstract class Animal {
         this.energy = this.energy - meters / moveSpeed;
     }
 
-    public TypeOfAnimal getTypeOfAnimal() {
-        return TypeOfAnimal.valueOf(this.getClass().getSimpleName().toUpperCase());
+    public AnimalSpecies getTypeOfAnimalSpieces() {
+        return animalSpecies;
     }
 
     @Override
     public String toString() {
         return "Animal{" +
-                "name='" + name + '\'' +
-                ", type='" + this.getClass() + '\'' +
+                "name='" + getName() + '\'' +
+                ", type='" + this.getClass().getSimpleName() + '\'' +
+                ", spieces:" + getTypeOfAnimalSpieces() +
                 '}';
     }
 }
