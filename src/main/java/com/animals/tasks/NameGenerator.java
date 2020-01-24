@@ -1,32 +1,42 @@
 package com.animals.tasks;
 
+import com.animals.exceptions.CustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
 
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
 import static java.lang.ClassLoader.getSystemClassLoader;
 
 public class NameGenerator {
 
+    public static final NameGenerator nameGenerator = new NameGenerator();
     private static final Logger log = LogManager.getLogger(NameGenerator.class);
 
     private String name = "";
 
     private void readFromFile(String filePath) {
         List<String> names = new ArrayList<>();
-        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(getSystemClassLoader().getResourceAsStream(String.valueOf(filePath))))) { //TODO catch null
+
+        InputStream inputStream = getSystemClassLoader().getResourceAsStream(String.valueOf(filePath));
+        Optional.ofNullable(inputStream).orElseThrow(CustomException::new);
+
+        try (BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStream))) {
             name = fileReader.readLine();
             do {
                 names.add(name);
                 name = fileReader.readLine();
             } while (name != null);
             name = generateRandomName(names);
-        } catch (Exception e) {
+        } catch (IOException e) {
             log.error("Wystapil blad w klasie: {} - {} ", NameGenerator.class, e);
         }
     }

@@ -30,6 +30,9 @@ public class AnimalVoiceFactory {
             case DOG:
                 return generateAnimalVoice("voices/dogs_voices");
             case COW:
+            case RED_COW:
+            case BLUE_COW:
+            case GREEN_COW:
                 return generateAnimalVoice("voices/cows_voices");
             case OWL:
                 return generateAnimalVoice("voices/owls_voices");
@@ -40,9 +43,13 @@ public class AnimalVoiceFactory {
             case PENGUIN:
                 return generateAnimalVoice("voices/penguins_voices");
             case PANDA:
+            case RED_PANDA:
                 return generateAnimalVoice("voices/pandas_voices");
             case SLOTH:
                 return generateAnimalVoice("voices/sloths_voices");
+            case YAK:
+            case NARWHAL:
+                return generateAnimalVoice("voices/random_voices");
         }
         return null;
     }

@@ -9,23 +9,25 @@ import org.apache.logging.log4j.Logger;
 
 import static com.animals.enums.RestLevel.*;
 
-public abstract class Animal {
+public class Animal {
 
     protected final Logger log = LogManager.getLogger(getClass());
 
     protected final int moveSpeed;
     protected final String name;
     protected final int weight;
+    protected final int growth;
     protected final AnimalVoice animalVoice;
     protected final AnimalSpecies animalSpecies;
     protected int energy = 0;
 
-    public Animal(String name, int weight, int moveSpeed, AnimalVoice animalVoice, AnimalSpecies animalSpecies) {
+    public Animal(String name, int weight, int growth, int moveSpeed, AnimalVoice animalVoice, AnimalSpecies animalSpecies) {
         this.weight = weight;
         this.name = name;
         this.moveSpeed = moveSpeed;
         this.animalVoice = animalVoice;
         this.animalSpecies = animalSpecies;
+        this.growth = growth;
     }
 
     public String getName() {
@@ -56,12 +58,12 @@ public abstract class Animal {
         }
     }
 
-    public String makeVoice() {
+    public String makeVoice() {  //todo
         RestLevel restLevel = howRested();
         this.energy--;
         switch (restLevel) {
             case EXHAUSTED:
-                return animalVoice.getExhausted(); //todo ma zwrocic poprawny glos w zaleznosci od zwierzecia
+                return animalVoice.getExhausted();
             case TIRED:
                 return animalVoice.getTired();
             case NORMAL:
@@ -103,4 +105,52 @@ public abstract class Animal {
                 ", spieces:" + getTypeOfAnimalSpieces() +
                 '}';
     }
+
+    public static class Builder {
+        private String name;
+        private int weight;
+        private int growth;
+        private int moveSpeed;
+        AnimalVoice animalVoice;
+        AnimalSpecies animalSpecies;
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setWeight(int weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public Builder setGrowth(int growth) {
+            this.growth = growth;
+            return this;
+        }
+
+        public Builder setMoveSpeed(int moveSpeed) {
+            this.moveSpeed = moveSpeed;
+            return this;
+        }
+
+        public Builder setAnimalVoice(AnimalVoice animalVoice) {
+            this.animalVoice = animalVoice;
+            return this;
+        }
+
+        public Builder setAnimalSpecies(AnimalSpecies animalSpecies) {
+            this.animalSpecies = animalSpecies;
+            return this;
+        }
+
+        public Builder() {
+        }
+
+        public Animal build() {
+            return new Animal(name, weight, growth, moveSpeed, animalVoice, animalSpecies);
+        }
+    }
+
+
 }

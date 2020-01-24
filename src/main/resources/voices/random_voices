@@ -1,0 +1,7 @@
+{
+     rested: "I AM RESTED!",
+     halfRested: "I AM HALF_RESTED!",
+     normal: "I FEEL NORMAL",
+     tired: "I AM TIRED",
+     exhausted: "I AM EXHAUSTED"
+ }

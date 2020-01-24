@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import static com.animals.factory.AnimalFactory.getRandomAnimal;
+import static com.animals.tasks.AnimalCreator.getRandomAnimal;
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
 
 public class AnimalBehaviorSimulator {
@@ -37,9 +37,7 @@ public class AnimalBehaviorSimulator {
     }
 
     private void animalBehaviorSimulation(List<Animal> animals) {
-        animals.forEach(animal -> {
-            simulationOfTheDay(animal);
-        });
+        animals.forEach(this::simulationOfTheDay);
     }
 
     private void simulationOfTheDay(Animal animal) {
@@ -51,7 +49,11 @@ public class AnimalBehaviorSimulator {
             log.info("Czy {} jest wyspany? {}", animal.getName(), animal.isRested());
             actionTime = actionTime > minutesToEndOfDay ? minutesToEndOfDay : actionTime;
             if (animal.isRested()) {
-                animal.makeVoice(generateRandomNumber(10));
+                try {
+                    animal.makeVoice(generateRandomNumber(10));
+                } catch (NullPointerException e) {
+                    throw new NullPointerException("Nie znaleziono ścieżki do pliku z głosami");
+                }
                 animal.moveInMinutes(actionTime);
                 log.info("{} chodził {} godzin i {} minut", animal.getName(), toHours(actionTime), actionTime % 60);
             } else {
