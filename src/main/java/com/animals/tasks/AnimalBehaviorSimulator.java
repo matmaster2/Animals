@@ -4,11 +4,8 @@ import com.animals.animals.Animal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
-import static com.animals.tasks.AnimalCreator.getRandomAnimal;
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
 
 public class AnimalBehaviorSimulator {
@@ -18,32 +15,28 @@ public class AnimalBehaviorSimulator {
     private static final int DAY_IN_MINUTES = 60 * 24;
     private static final String TAB = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
 
-    private final int numberOfAnimals;
     private final int dayOfLife;
+    private final List <Animal> animals;
 
-    public AnimalBehaviorSimulator(int numberOfAnimals, int dayOfLife) {
-        this.numberOfAnimals = numberOfAnimals;
+    public AnimalBehaviorSimulator(List <Animal> animals, int dayOfLife) {
+        this.animals = animals;
         this.dayOfLife = dayOfLife;
     }
 
-    public void simulation() {
-        List<Animal> animals = generateAnimals();
+    public void simulateDaysOfAnimals() {
         for (int i = 1; i <= dayOfLife; i++) {
             log.info(TAB + "Dzień: {}", i);
-            animalBehaviorSimulation(animals);
-            System.out.println(animals.get(0).getTypeOfAnimalSpieces()); //do testow
-            animals.forEach(System.out::println); //do testow
+            simulateDayOfAnimals(animals);
         }
     }
 
-    private void animalBehaviorSimulation(List<Animal> animals) {
-        animals.forEach(this::simulationOfTheDay);
+    private void simulateDayOfAnimals(List<Animal> animals) {
+        animals.forEach(this::simulateOfTheDay);
     }
 
-    private void simulationOfTheDay(Animal animal) {
+    private void simulateOfTheDay(Animal animal) {
         int minutesToEndOfDay = DAY_IN_MINUTES;
         log.info(TAB + "Dane na temat {}: ", animal.getName());
-
         while (minutesToEndOfDay > 0) {
             int actionTime = generateRandomNumber();
             log.info("Czy {} jest wyspany? {}", animal.getName(), animal.isRested());
@@ -63,13 +56,6 @@ public class AnimalBehaviorSimulator {
             log.info("Do końca dnia pozostało: {} godzin i {} minut", toHours(minutesToEndOfDay - actionTime), (minutesToEndOfDay - actionTime) % 60);
             minutesToEndOfDay = minutesToEndOfDay - actionTime;
         }
-    }
-
-
-    private List<Animal> generateAnimals() {
-        List<Animal> animalList = new ArrayList<>();
-        IntStream.range(0, numberOfAnimals).forEach(animal -> animalList.add(getRandomAnimal()));
-        return animalList;
     }
 
     private int toHours(int minutes) {
