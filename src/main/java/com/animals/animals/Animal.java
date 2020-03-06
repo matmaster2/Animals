@@ -58,7 +58,7 @@ public class Animal {
         }
     }
 
-    public String makeVoice() {  //todo
+    public String makeVoice() {
         RestLevel restLevel = howRested();
         this.energy--;
         switch (restLevel) {
