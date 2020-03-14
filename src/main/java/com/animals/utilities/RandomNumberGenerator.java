@@ -2,7 +2,6 @@ package com.animals.utilities;
 
 import java.util.Random;
 
-
 public class RandomNumberGenerator {
 
     private static Random random = new Random();

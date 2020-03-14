@@ -4,8 +4,11 @@ import com.animals.animals.Animal;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
+import static com.animals.tasks.AnimalCreator.getRandomAnimal;
 import static com.animals.utilities.RandomNumberGenerator.generateRandomNumber;
 
 public class AnimalBehaviorSimulator {
@@ -16,11 +19,17 @@ public class AnimalBehaviorSimulator {
     private static final String TAB = "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
 
     private final int dayOfLife;
-    private final List <Animal> animals;
+    private final List<Animal> animals;
 
-    public AnimalBehaviorSimulator(List <Animal> animals, int dayOfLife) {
+    private AnimalBehaviorSimulator(List<Animal> animals, int dayOfLife) {
         this.animals = animals;
         this.dayOfLife = dayOfLife;
+    }
+
+    private static List<Animal> generateListOfAnimals(int numberOfAnimals) {
+        List<Animal> animalList = new ArrayList<>();
+        IntStream.range(0, numberOfAnimals).forEach(animal -> animalList.add(getRandomAnimal()));
+        return animalList;
     }
 
     public void simulateDaysOfAnimals() {
@@ -62,4 +71,36 @@ public class AnimalBehaviorSimulator {
         return (minutes) / 60;
     }
 
+    public static class Builder {
+        private List<Animal> animals;
+        private int dayOfLife;
+
+        public Builder() {
+            animals = new ArrayList<Animal>();
+        }
+
+        public Builder addAnimal(Animal animal) {
+            animals.add(animal);
+            return this;
+        }
+
+        public Builder addAnimals(List<Animal> animals) {
+            this.animals.addAll(animals);
+            return this;
+        }
+
+        public Builder addRandomAnimals(int numberOfAnimals) {
+            this.animals.addAll(generateListOfAnimals(numberOfAnimals));
+            return this;
+        }
+
+        public Builder setNumberOfDays(int dayOfLife) {
+            this.dayOfLife = dayOfLife;
+            return this;
+        }
+
+        public AnimalBehaviorSimulator build() {
+            return new AnimalBehaviorSimulator(animals, dayOfLife);
+        }
+    }
 }

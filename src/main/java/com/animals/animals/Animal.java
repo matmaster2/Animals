@@ -21,7 +21,7 @@ public class Animal {
     protected final AnimalSpecies animalSpecies;
     protected int energy = 0;
 
-    public Animal(String name, int weight, int growth, int moveSpeed, AnimalVoice animalVoice, AnimalSpecies animalSpecies) {
+    private Animal(String name, int weight, int growth, int moveSpeed, AnimalVoice animalVoice, AnimalSpecies animalSpecies) {
         this.weight = weight;
         this.name = name;
         this.moveSpeed = moveSpeed;
